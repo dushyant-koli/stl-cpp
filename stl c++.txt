@@ -1,0 +1,448 @@
+//arrays in stl
+#include <iostream>
+#include <array>//library for stl array
+using namespace std;
+
+int main(){
+
+int basic[]={1,2,3};
+
+array<int,4> a={1,2,3,4};//array named a
+
+int size=a.size();// size of array in stl
+
+for(int i=0;i<size;i++){
+    cout<<a[i]<<endl;//accessing array
+}
+
+cout<<"element at index 2 "<<a.at(2)<<endl;
+
+cout<<"empty or not: "<<a.empty()<<endl;// 0 aya toh not empty
+
+cout<<"first element is "<<a.front()<<endl;
+
+cout<<"last element is "<<a.back()<<endl;
+
+return 0;
+
+}
+
+//vector in stl 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    
+    //creation int vector v
+    vector<int> v;
+    
+    // vector<int> a(5,1);// 5 size ka vector 1 se initialized
+    // cout<<"print a"<<endl;
+    // for(int i:a){
+    //     cout<<i<<" ";
+    // }
+    
+    //v ko a vector me copy me copy kiya jise last vect. banaya
+//     vector<int> last(a);
+
+//     cout<<"print last "<<endl;
+    
+//     for(int i:last){
+//     cout<<i<<" ";
+// }cout<<endl;
+
+    cout<<"capacity: "<<v.capacity()<<endl;
+    
+    v.push_back(1);
+    cout<<"capacity: "<<v.capacity()<<endl;
+    
+    v.push_back(2);
+     cout<<"capacity: "<<v.capacity()<<endl;
+     
+     
+     v.push_back(3);
+     cout<<"capacity: "<<v.capacity()<<endl;
+     cout<<"size: "<<v.size()<<endl;
+     
+//      cout<<"element at 2nd index "<<v.at(2)<<endl;
+     
+//      cout<<"front "<<v.front()<<endl;
+//      cout<<"back "<<v.back()<<endl;
+     
+//      cout<<"before pop "<<endl;
+//      for(int i:v){
+//          cout<<i<<endl;
+//      }cout<<endl;
+     
+//      v.pop_back();
+     
+//      cout<<"after pop "<<endl;
+//      for(int i:v){
+//          cout<<i<<" ";
+//      }
+     
+//      cout<<"before clear size "<<v.size()<<endl;
+//      v.clear();
+//      cout<<"after clear size "<<v.size()<<endl;
+     }
+
+     //Deque in stl
+#include <iostream>
+#include <deque>
+using namespace std;
+
+int main(){
+    
+    // create deque d
+    deque<int> d;
+    
+     d.push_front(2);
+    d.push_back(1);
+    
+     
+     for(int i:d){
+         cout<<i<<" ";
+     }
+    //  d.pop_back();
+    //  cout<<endl;
+    //  for(int i:d){
+    //      cout<<i<<" ";
+    //  }
+    
+    // cout<<endl;
+    
+    // cout<<"print index element "<<d.at(1)<<endl;
+    
+    // cout<<"front element "<<d.front()<<endl;
+    // cout<<"back element "<<d.back()<<endl;
+    
+    // cout<<"empty or not: "<<d.empty()<<endl;
+    
+    cout<<"\nbefore erase: "<<d.size()<<endl;
+    // d.erase(d.begin(),d.begin()+1);
+    // cout<<"after eraes: "<<d.size()<<endl;
+    
+    // for(int i:d){
+    //     cout<<i<<endl;
+    // }
+    
+
+}
+
+//list stl
+#include <iostream>
+#include <list>
+using namespace std;
+
+int main(){
+    
+    list<int> l;
+    list<int> n(5,100);//copy list l to n having 5 elements of 100
+    
+    cout<<"printing n using for loop "<<endl;
+    for(int i:n){
+        cout<<i<<" ";
+    }
+    
+    cout<<endl;
+    
+    l.push_back(1);
+    l.push_front(2);
+    
+    //printing list
+    for(int i:l){
+        cout<<i<<" ";
+        
+    }
+    
+    cout<<endl;// space de h alag alag method run krne ke liye
+    
+    l.erase(l.begin());// list ke begin me 2 tha l.begin se 2 erased
+    
+    cout<<"after eraes "<<endl;// 1 is remain
+    // for loop used to print list
+    for(int i:l){
+        cout<<i<<endl;
+    }
+    
+    cout<<"size of list "<<l.size()<<endl;//find size of list
+    
+}       
+    
+
+//stack stl
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main(){
+    
+    //string type ka banaya
+    stack<string> s;
+   
+   s.push("love");//sbse phle dala toh sbse niche rhega stack me 
+   s.push("babar");//uske baad 2nd no pe dala toh uske upar rhega
+   s.push("kumar");//sbse baad me dala 
+   
+   cout<<"top element: "<<s.top()<<endl;//sbse baad h top element h
+   
+//   s.pop();
+//top ko stack se pop krke 2nd wala dekhega 
+//   cout<<"top element: "<<s.top()<<endl;
+  
+//   cout<<"size of stack "<<s.size()<<endl;
+//   cout<<"is empty or not: "<<s.empty()<<endl;
+   
+   
+   
+}
+
+//queue stl
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main() {
+     
+     // string type ki queue banayi
+     queue<string> q;
+    
+    //queue me push kiya h
+   q.push("love");
+   q.push("babar");
+   q.push("kumar");
+   
+cout<<"first element "<<q.front()<<endl;
+
+q.pop();
+cout<<"first element "<<q.front()<<endl;
+
+cout<<"size after pop "<<q.size()<<endl;
+
+         
+    return 0;
+}
+
+// priority queue
+
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main(){
+    
+     // to crearte max heap 
+     priority_queue<int> maxi;
+     
+     // min heap create
+     priority_queue<int,vector<int>, greater<int> >mini; 
+     
+     
+     //max heap me 4 elements dale h
+     maxi.push(1);
+     maxi.push(3);
+     maxi.push(2);
+     maxi.push(0);
+     
+     // size of max heap
+     cout<<"size: "<<maxi.size()<<endl;
+     
+    
+
+//element ko print kraya max heap
+     int n=maxi.size();//n ko max heap ke size se initialize kiya 
+     
+     for(int i=0;i<n;i++){
+         cout<<maxi.top()<<" ";
+         maxi.pop();
+     }cout<<endl;
+     
+     
+     //min heap me elements dale h
+     mini.push(5);
+     mini.push(1);
+     mini.push(0);
+     mini.push(4);
+     mini.push(3);
+    
+     //initialize n with 
+    //  int n=mini.size();
+     for(int i=0;i<n;i++){
+         cout<<mini.top()<<" ";
+         mini.pop();
+     }cout<<endl;
+     
+     cout<<"khali h kya?? "<<mini.empty()<<endl;
+     
+}
+     
+// sets stl
+
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main()
+{
+    //create set s 
+    set<int> s;
+
+//value eneter karo but vo unique bar print karega
+    s.insert(5);
+    s.insert(5);
+    s.insert(5);
+    s.insert(1);
+    s.insert(6);
+    s.insert(6);
+    s.insert(0);
+    s.insert(0);
+    s.insert(0);
+    
+    //printing elements of set
+    for (auto i : s)
+    {
+        cout << i << endl;
+    }
+
+//delete ke liye iterator diya
+    set<int>::iterator it = s.begin();
+    it++;//begin ke baad wala element delete kiya
+    
+    s.erase(it);
+
+    for (auto i : s)
+    {
+        cout << i << endl;
+    }
+    
+    cout << endl;//separate operations 
+    
+    
+    cout << "5 is present or not: " << s.count(5) << endl;
+
+    set<int>::iterator itr = s.find(5);//5 ka iterator return karaega
+
+    for (auto it = itr; it != s.end(); it++)
+    {
+        cout << *it << " ";
+    }
+    cout << endl;
+}
+//   cout<<"value present at itr "<<*it<<endl;
+
+
+// Maps stl
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main()
+{
+   // integer string type ka map banaya
+    map<int, string> m;
+
+    m[2] = "babar";
+    m[1] = "love"; // map ke case me value sort orederd form me print hogi
+                   // unordered map ke case me random koi bhi order ho skta
+    m[13] = "kumar";
+
+    m.insert({5, "bheem"});// 5 me bheem dala
+
+    cout << "before eraese " << endl;
+    
+    for (auto i : m)
+    {
+        cout << i.first << " " << i.second << endl;
+    }
+    cout << "finding 13: " << m.count(13) << endl;
+
+    m.erase(13);//13 ko erase kiya
+    
+    cout << "after erase" << endl;
+    
+    for (auto i : m)
+    {
+        cout << i.first << " " << i.second << endl;
+    }
+
+    auto it = m.find(5);
+
+    for (auto i = it; i != m.end(); i++)
+    {
+        cout << (*i).first << endl;
+    }
+}
+
+
+// stl algorthms
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    // int vector banaya
+    vector<int> v;
+
+    v.push_back(1);
+    v.push_back(3);
+    v.push_back(6);
+    v.push_back(7);
+
+//finding 6 in binary search                 to search  place value
+    cout << "finding 6: " << binary_search(v.begin(), v.end(), 6) << endl;
+    
+    //finding lowerbound jo ki iterator return krta h
+    cout << "lower bound: " << lower_bound(v.begin(), v.end(), 6) - v.begin() << endl;
+    
+    //finding upperbound 
+    cout << "upper bound: " << upper_bound(v.begin(), v.end(), 6) - v.begin() << endl;
+
+// finding max and min
+    int a = 3;
+    int b = 5;
+    cout << "max: " << max(a, b) << endl;
+    cout << "min: " << min(a, b) << endl;
+
+//swappimg two numbers
+    swap(a, b);
+    cout << "a: " << a << endl;
+    cout << "b: " << b << endl;
+
+//string abcd create kiya 
+    string abcd = "abcd";
+    
+    //printing reverse
+    reverse(abcd.begin(), abcd.end());
+    cout << "string: " << abcd << endl;
+
+//rotate vector  1 se rotate krna h toh +1
+    rotate(v.begin(), v.begin() + 1, v.end());
+    cout << "after rotate: " << endl;
+    
+    //for loop se print kiya rotated vect.
+    for (int i : v)
+    {
+        cout << i << " ";
+    }
+
+//vector sort function 
+    sort(v.begin(), v.end());
+    
+    
+    cout << "\nafter sort vector print: " << endl;
+    
+    //for loop to print vectr
+    for (int i : v)
+    {
+        cout << i << " ";
+    }
+}
+
+
+
+
